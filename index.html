@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Catch the X</title>
+    <!-- Required meta tags -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="//cdn.jsdelivr.net/npm/phaser@3.11.0/dist/phaser.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="Styles/style.css">
+    <link rel="stylesheet" href="Styles/firework.css">
+</head>
+
+<body>
+    <div class="alert-box text-center" style="display: none;">
+        <div class="container "> <img src="./images/handy.jpeg"> <h1>This game is desktop only!</h1></div>
+    </div>
+    <div class="body-div">
+        <nav class="navbar navbar-expand-sm div_nav">
+            <h2 class="navbar-title">Catch the X</h2>
+                <!-- <ul class="navbar-nav mt-2 mt-lg-0">
+                    
+
+                    <li class="nav-item">
+                        <a class="nav-link hover-nav" id="mute" href="#" onclick="toggleMusic()"><i
+                                class="fas fa-volume-up"></i></a>
+                    </li>
+                </ul> -->
+                <div class="navbar-center">
+                <p id="timer" id="center-mid"></p>
+                </div>
+                <ul class="navbar-nav " style="right: -4rem !important; position: absolute;">
+                    
+                    <li class="nav-item">
+                        <a class="nav-link hover-nav" id="mute" href="#" onclick="toggleMusic()"></a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link " onclick="location.reload()" href="#">Reset</a>
+                    </li>
+                </ul>
+        </nav>
+        <div class="container text-center game-over" style="display: none;">
+            <div class="before"></div>
+            <div class="after"></div>
+
+            <h2 class="winner">The winner is:<br><span id="winner-name"></span> </h2>
+            <span id="winner-2"></span> <br>
+            <span id="winner-3"></span> 
+        </div>
+        <div class="container-game-start text-center">
+            <h1>QUICK SETUP</h1>
+            <div class="row justify-content-center">
+                <div class="col col-3 start-box border-1" id="player-1">
+                    <h1>Player 1</h1>
+                    <img src="./images/hero.png" class="avatar-img img-1">
+                    <div class="row justify-content-center mt-3">
+                        <div class="col col-2 avatar-boxes avatar-boxes-hover"><img src="./images/hero.png"></div>
+                        <div class="col col-2 avatar-boxes avatar-boxes-hover"><img src="./images/hero.png"></div>
+                        <div class="col col-2 avatar-boxes avatar-boxes-hover"><img src="./images/hero.png"></div>
+                        <!-- <div class="col col-2 avatar-boxes avatar-boxes-hover">
+                            <div class="wrapper">
+                                <div class="file-upload">
+                                    <input type="file" id="custom-img-1" />
+                                    +
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="border-2 input-div  hover" id="input-player-1">
+                        <input class="input-name " placeholder="Enter name..." size="10" id="input-name">
+                    </div>
+                    <div>
+                        <button class="button-add button-hover" id="button-add-player-1"
+                            onclick="player1Add()">ADD</button>
+                    </div>
+                </div>
+                <div class="col col-3 start-box border-1" id="player-2">
+                    <h1>Player 2</h1>
+                    <div class="mark"></div>
+                    <img src="./images/hero.png" class="avatar-img img-2">
+                    <div class="row justify-content-center mt-3">
+                        <div class="col col-2 avatar-boxes avatar-boxes-hover"><img src="./images/hero.png"></div>
+                        <div class="col col-2 avatar-boxes avatar-boxes-hover"><img src="./images/hero.png"></div>
+                        <div class="col col-2 avatar-boxes avatar-boxes-hover"><img src="./images/hero.png"></div>
+                        <!-- <div class="col col-2 avatar-boxes avatar-boxes-hover">
+                            <div class="wrapper">
+                                <div class="file-upload">
+                                    <input type="file" id="custom-img-2" />
+                                    +
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="border-2 input-div" id="input-player-2">
+                        <input class="input-name " placeholder="Enter name..." disabled size="10" id="input-name-2">
+                    </div>
+                    <div>
+                        <button class="button-add " id="button-add-player-2" disabled onclick="player2Add()">ADD</button>
+                    </div>
+                </div>
+                <div class="col col-3 start-box border-1" id="player-3">
+                    <h1>Player 3</h1>
+                    <img src="./images/hero.png" class="avatar-img img-3">
+                    <div class="row justify-content-center mt-3">
+                        <div class="col col-2 avatar-boxes avatar-boxes-hover"><img src="./images/hero.png"></div>
+                        <div class="col col-2 avatar-boxes avatar-boxes-hover"><img src="./images/hero.png"></div>
+                        <div class="col col-2 avatar-boxes avatar-boxes-hover"><img src="./images/hero.png"></div>
+                        <!-- <div class="col col-2 avatar-boxes avatar-boxes-hover">
+                            <div class="wrapper">
+                                <div class="file-upload">
+                                    <input type="file" id="custom-img-3" />
+                                    +
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div class="border-2 input-div " id="input-player-3">
+                        <input class="input-name " disabled placeholder="Enter name..." size="10" id="input-name-3">
+                    </div>
+                    <div>
+                        <button class="button-add" disabled id="button-add-player-3" onclick="player3Add()">ADD</button>
+                    </div>
+                </div>
+                <button class="button-start" disabled onclick="showGame()">START</button>
+            </div>
+        </div>
+    <div class="container-main" style="display: none;">
+        <div class="row" style="width: 100vw !important;">
+            <div class="col col-2 scoreboard main-border hover">
+                <p>Scoreboard</p>
+                <ol class="scoreboard-list">
+                    <li id="num-1">Jakob: 0</li>
+                    <li id="num-2">Mathias: 0</li>
+                    <li id="num-3" style="display: none;">Maximilian: 0</li>
+                </ol>
+                <!-- <button class="nav-link hover-nav d-inline" id="save-game-btn">Save</button> -->
+            </div>
+
+            <div id="countdown">
+
+                <!-- <button id="start-game-btn" onclick="gameStart()">START</button> -->
+                
+            </div>
+            <div id="game-div" style="display: none; position: relative;">
+                <div id="phaser-div" style="position: absolute;">
+
+                </div>
+                <div style="position: absolute;"> <img class="border-img" src="./images/border-game.png" width="1180"
+                        height="890"></div>
+            </div>
+            <div class="col col-2" style="right: 4rem; position: absolute;">
+                <!-- <button id="start-game-btn" onclick="gameStart()">START</button> -->
+                <!-- <div class="main-border input-div float-left hover">
+                    <input class="input-name " placeholder="Enter name..." size="10" id="input-name">
+                </div>
+                <div class="float-right mr-4 ">
+                    <button class="main-border button-add button-hover" id="button-add-player">ADD</button>
+                </div> -->
+                <div class="player-1-board main-border player-settings float-left hover">
+                    <div class="row">
+                        <div class="col col-8">
+                            <h3>Spieler 1</h3>
+                        </div>
+                        <div class="col col-4">
+                            <img src="./images/hero.png" height="50px" class="img-1">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-7">
+                            <img src="./images/controls/wasd.png" class="controls_img">
+                        </div>
+                        <div class="col col-5 pt-4 d-inline">
+                            <div><img src="assets/speed.png" width="20px"><span id="counter1-p1">0</span>sec</div><br>
+                            <div><img src="assets/poison.png" width="20px"><span id="counter2-p1">0</span>sec</div><br>
+                            <div><img src="assets/star.png" width="20px"><span id="counter3-p1">0</span>sec</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="player-2-board main-border player-settings float-left hover mt-4">
+                    <div class="row">
+                        <div class="col col-8">
+                            <h3>Spieler 2</h3>
+                        </div>
+                        <div class="col col-4">
+                            <img src="./images/hero.png" height="50px" class="img-2">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-7">
+                            <img src="./images/controls/arrows.png" class="controls_img">
+                        </div>
+                        <div class="col col-5 pt-4 d-inline" id="counter-p2">
+                            <div><img src="assets/speed.png" width="20px"><span id="counter1-p2">0</span>sec</div><br>
+                            <div><img src="assets/poison.png" width="20px"><span id="counter2-p2">0</span>sec</div><br>
+                            <div><img src="assets/star.png" width="20px"><span id="counter3-p2">0</span>sec</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="player-3-board main-border player-settings float-left hover mt-4" style="display: none">
+                    <div class="row">
+                        <div class="col col-8">
+                            <h3>Spieler 3</h3>
+                        </div>
+                        <div class="col col-4">
+                            <img src="./images/hero.png" height="50px" class="img-3">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col col-7">
+                            <img src="./images/controls/ijkl.png" class="controls_img">
+                        </div>
+                        <div class="col col-5 pt-4 d-inline">
+                            <div><img src="assets/speed.png" width="20px"><span id="counter1-p3">0</span>sec</div><br>
+                            <div><img src="assets/poison.png" width="20px"><span id="counter2-p3">0</span>sec</div><br>
+                            <div><img src="assets/star.png" width="20px"><span id="counter3-p3">0</span>sec</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- <p id="x">X</p>
+                <p id="y">Y</p>
+                <input type="text" id="jsontxt"></input> -->
+            </div>
+        </div>
+    </div>
+    <footer class="fixed-bottom footer-main text-center">
+        Created with ❤️ by Jakob and Mathias
+    </footer>
+
+    </div>
+</body>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="image.js">
+</script>
+<script src="game.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
+<script src="gui.js"></script>
+<script src="music-controller.js"></script>
+
+</html>

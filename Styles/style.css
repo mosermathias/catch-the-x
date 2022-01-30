@@ -1,0 +1,454 @@
+:root {
+    --main-red-color: black;
+    --main-font-size: 1rem;
+}
+
+.navbar-center {
+    position: absolute;
+    left: 50%;
+
+}
+
+.navbar-center>p {
+    font-size: 2.5rem;
+}
+
+/* body {
+    overflow: hidden;
+}*/
+html,
+body {
+    background-color: white !important;
+    font-size: var(--main-font-size);
+}
+
+
+@font-face {
+    font-family: MainFont;
+    src: url(RockyAge.ttf);
+}
+
+
+@font-face {
+    font-family: Bangers;
+    src: url(VanillaTwilight.otf);
+}
+
+#start-game-btn {
+    /* Variables */
+    --button_radius: 0.6em;
+    --button_color: #e8e8e8;
+    --button_outline_color: #000000;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border: none;
+    border-radius: var(--button_radius);
+    background: var(--button_outline_color);
+}
+
+.button_top {
+    display: block;
+    box-sizing: border-box;
+    border: 2px solid var(--button_outline_color);
+    border-radius: var(--button_radius);
+    padding: 0.75em 1.5em;
+    background: var(--button_color);
+    color: var(--button_outline_color);
+    transform: translateY(-0.2em);
+    transition: transform 0.1s ease;
+}
+
+#start-game-btn:hover .button_top {
+    /* Pull the button upwards when hovered */
+    transform: translateY(-0.33em);
+}
+
+#start-game-btn:active .button_top {
+    /* Push the button downwards when pressed */
+    transform: translateY(0);
+}
+
+
+#countdown {
+    font-family: Bangers;
+    text-align: center;
+    color: black !important;
+    font-size: 5rem !important;
+    height: auto;
+    width: 60vw !important;
+}
+
+
+.div_nav {
+    margin-right: 10%;
+}
+
+.container-main {
+    background-color: white;
+    margin-top: 2rem;
+}
+
+.avatar-img {
+    border: white 1px solid;
+    padding: 1rem;
+    width: 30%;
+}
+
+.start-box {
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    /* border: var(--main-red-color) solid 1px;
+    border-radius: 1rem; */
+}
+
+#player-2 {
+    opacity: 50%;
+}
+
+#player-3 {
+    opacity: 30%;
+}
+
+.avatar-boxes {
+    background-image: url("../images/border-3.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin-right: 0.5rem;
+}
+
+.avatar-boxes-hover:hover {
+    background-color: grey;
+}
+
+.container-game-start {
+    font-family: Bangers;
+    margin-top: 2rem;
+}
+
+#collapse-nav {
+    margin-left: 4rem !important;
+    width: 20vw !important;
+}
+
+.navbar-title {
+    font-size: 2.5rem;
+}
+
+.scoreboard-list>li {
+    font-size: 2rem !important;
+}
+
+.scoreboard-list span {
+    text-align: right;
+}
+
+.hover-nav:hover {
+    color: grey !important;
+}
+
+/* .reload {
+    color: red !important;
+} */
+
+.reload:hover {
+    color: grey !important;
+}
+
+input:focus {
+    outline: none;
+}
+
+.scoreboard {
+    font-family: Bangers;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    height: auto;
+}
+
+.hover:hover {
+    /* border: white 2px solid; */
+    background-color: rgb(219, 219, 219);
+}
+
+.button-start {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    background-image: url("../images/border-4.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    opacity: 50%;
+    width: 25% !important;
+    margin-bottom: 2rem;
+    margin-left: 0%;
+    color: black;
+    font-size: x-large;
+}
+
+.main-border {
+    /* color: black;
+
+    background: #fff;
+    border: solid black;
+    border-color: black;
+
+    border-width: 3px 3px 5px 5px;
+    border-radius: 4% 95% 6% 95%/95% 4% 92% 5%;
+    transform: rotate(-2deg); */
+    background-image: url("../assets/border-long.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.border-1 {
+    background-image: url("../images/border-1.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.border-2 {
+    background-image: url("../images/border-2.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.main-border-rotated {
+    background-image: url("../images/border-schraeg.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+
+.button-add {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    background-color: white;
+    padding-top: 0.5rem;
+    font-family: MainFont;
+    padding-bottom: 0.5rem;
+    width: 50% !important;
+    font-size: larger;
+    color: black;
+    background-image: url("../images/border-2.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin-bottom: 2rem;
+}
+
+.button-hover:hover {
+    /* background: none;
+    border: white 4px solid */
+}
+
+.input-div {
+    margin: 0 auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 0.4rem;
+    width: 50% !important;
+}
+
+.winner {
+    font-family: 'MainFont';
+    margin-top: 5rem;
+    font-size: 3rem;
+}
+
+#winner-name {
+    font-size: 7rem;
+}
+
+#winner-2 {
+    font-family: 'MainFont';
+
+    font-size: 5rem;
+}
+
+#winner-3 {
+    font-family: 'MainFont';
+    font-size: 3rem;
+}
+
+.mark {
+    background: none;
+    position: relative;
+    top: 0;
+    right: 0;
+}
+
+.player-1-board,
+.player-3-board,
+.player-2-board {
+    min-width: 18vw;
+}
+
+#player-1,
+#player-2,
+#player-3 {
+    margin: 1rem;
+}
+
+.player-settings {
+    width: 100%;
+    padding: 0.4rem;
+    font-family: Bangers;
+    font-size: large !important;
+}
+
+.footer-main {
+
+    font-family: Bangers;
+    color: black;
+    padding-top: 1rem;
+
+    padding-bottom: 1rem;
+}
+
+.input-name {
+    font-family: Bangers;
+    font-size: large !important;
+    background: transparent;
+    border: none;
+    color: black;
+    padding-left: 1rem;
+}
+
+.input-name::placeholder {
+    color: black;
+}
+
+.scoreboard>p {
+    font-size: 3rem;
+}
+
+.active-tab {
+    border-bottom: black 2px solid !important;
+}
+
+.navbar {
+    margin-top: 1.5rem;
+    background-color: white !important;
+    font-family: MainFont;
+}
+
+/* .navbar-brand {
+    color: var(--main-red-color) !important;
+    margin-left: 10rem;
+    font-size: 2.5em !important;
+} */
+
+.nav-link {
+    color: var(--main-red-color);
+    font-size: x-large;
+}
+
+#phaser-div>canvas {
+    border: 1px solid black;
+    height: auto;
+    width: 60vw;
+}
+
+.canvas-border {
+
+    border: none !important;
+}
+
+#phaser-div {
+    height: auto;
+    width: 60vw;
+    border-radius: 1rem;
+
+}
+
+.box {
+    margin: 25px;
+    width: 250px;
+    height: 250px;
+    background: #fff;
+    border: solid black;
+    border-color: black;
+    float: left;
+}
+
+.box2 {
+    width: 350px;
+    border-width: 3px 3px 5px 5px;
+    border-radius: 4% 95% 6% 95%/95% 4% 92% 5%;
+    transform: rotate(-2deg);
+}
+
+@media screen and (max-width:1200px) {
+
+
+    :root {
+        --main-font-size: 0.5rem;
+    }
+
+    .navbar-brand {
+        font-size: 3em !important;
+    }
+
+    .nav-link {
+        font-size: 2rem !important;
+    }
+
+    #phaser-div>canvas {
+        height: auto;
+        width: 60vw;
+    }
+
+    #phaser-div {
+        height: auto;
+        width: 60vw;
+    }
+
+    /* #num-1 {
+        font-size: 2rem !important;
+    }
+
+    #num-2 {
+        font-size: 2rem !important;
+    }
+
+
+    #num-3 {
+        font-size: 1.5rem !important;
+    } */
+
+    .scoreboard {
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+
+}
+
+
+
+.wrapper .file-upload {
+    border-radius: 100px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: black;
+    font-size: 2rem;
+}
+
+.wrapper .file-upload input[type=file] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
